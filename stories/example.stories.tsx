@@ -51,13 +51,13 @@ export const InlineError = () => {
   const formMethods = useForm({
     defaultValues: {
       firstName: 'Thaddeus',
-      lastName: 'Jiang',
-      age: undefined,
+      lastName: undefined,
+      age: 30,
     },
     values: {
       firstName: 'Thaddeus',
-      lastName: 'Jiang',
-      age: undefined,
+      lastName: undefined,
+      age: 30,
     },
     resolver: yupResolver(schema),
     mode: 'onChange',
