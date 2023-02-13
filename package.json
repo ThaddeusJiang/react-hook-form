@@ -1,0 +1,114 @@
+{
+  "name": "@thaddeusjiang/react-hook-form",
+  "author": "Thaddeus Jiang",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "module": "dist/react-hook-form.esm.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "start": "tsdx watch",
+    "test": "tsdx test --passWithNoTests",
+    "lint": "tsdx lint",
+    "size": "size-limit",
+    "analyze": "size-limit --why",
+    "storybook": "start-storybook -p 6007",
+    "prepare": "npm run build",
+    "build": "tsdx build && npm run build-tailwind",
+    "build-tailwind": "NODE_ENV=production npx tailwindcss -o ./dist/index.css --minify",
+    "build-storybook": "build-storybook"
+  },
+  "peerDependencies": {
+    "@hookform/error-message": "^2.0.1",
+    "@hookform/resolvers": "^2.9.11",
+    "react": ">=16",
+    "react-hook-form": "^7.43.1",
+    "yup": "^1.0.0",
+    "classnames": "^2.3.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 120,
+    "semi": true,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "size-limit": [
+    {
+      "path": "dist/react-hook-form.cjs.production.min.js",
+      "limit": "10 KB"
+    },
+    {
+      "path": "dist/react-hook-form.esm.js",
+      "limit": "10 KB"
+    }
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@hookform/devtools": "^4.3.0",
+    "@size-limit/preset-small-lib": "^7.0.8",
+    "@storybook/addon-essentials": "^6.4.20",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-links": "^6.4.20",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addons": "^6.4.20",
+    "@storybook/react": "^6.4.20",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^14.2.0",
+    "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
+    "@types/testing-library__jest-dom": "^5.14.3",
+    "autoprefixer": "^10.4.4",
+    "babel-loader": "^8.2.4",
+    "cssnano": "^5.1.7",
+    "daisyui": "^2.43.2",
+    "husky": "^7.0.4",
+    "jest-environment-jsdom-sixteen": "^2.0.0",
+    "postcss": "^8.4.12",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-is": "^18.0.0",
+    "size-limit": "^7.0.8",
+    "tailwindcss": "^3.0.24",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.3"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{ts,tsx}"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/setupTests.ts"
+    ],
+    "modulePaths": [
+      "<rootDir>/src"
+    ],
+    "testEnvironment": "jest-environment-jsdom-sixteen"
+  },
+  "dependencies": {},
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
+  "homepage": "https://github.com/ThaddeusJiang/react-hook-form#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThaddeusJiang/react-hook-form.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ThaddeusJiang/react-hook-form/issues"
+  },
+  "keywords": [
+    "React",
+    "Components"
+  ]
+}
