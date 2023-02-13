@@ -23,12 +23,11 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
-    "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "^2.9.11",
+    "classnames": "^2.3.2",
     "react": ">=16",
     "react-hook-form": "^7.43.1",
-    "yup": "^1.0.0",
-    "classnames": "^2.3.2"
+    "yup": "^1.0.0"
   },
   "husky": {
     "hooks": {
@@ -95,7 +94,6 @@
     ],
     "testEnvironment": "jest-environment-jsdom-sixteen"
   },
-  "dependencies": {},
   "publishConfig": {
     "registry": "https://registry.npmjs.org"
   },
