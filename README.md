@@ -1,14 +1,16 @@
 # Welcome to @thaddeusjiang/react-hook-form 👋
 
+> Out of box form input components via react-hook-form and daisyUI
+
 ![Version](https://img.shields.io/npm/v/@thaddeusjiang/react-hook-form.svg)
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/ThaddeusJiang/react-hook-form#readme)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/ThaddeusJiang/react-hook-form/graphs/commit-activity)
-[![License: MIT](https://img.shields.io/github/license/ThaddeusJiang/@thaddeusjiang/react-hook-form)](https://github.com/ThaddeusJiang/react-hook-form/blob/main/LICENSE)
+[![License: MIT](https://img.shields.io/github/license/ThaddeusJiang/react-hook-form)](https://github.com/ThaddeusJiang/react-hook-form/blob/main/LICENSE)
 [![Twitter: ThaddeusJiang](https://img.shields.io/twitter/follow/ThaddeusJiang.svg?style=social)](https://twitter.com/ThaddeusJiang)
 
-> Out of box form input components via react-hook-form and daisyUI
-
 ### 🏠 [Homepage](https://github.com/ThaddeusJiang/react-hook-form#readme)
+
+### [Demo](TODO: add demo link)
 
 ## Features
 
