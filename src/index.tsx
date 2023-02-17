@@ -1,7 +1,7 @@
 import { Checkbox } from './components/Checkbox';
 import { Field } from './components/Field';
 import { InputNumber } from './components/InputNumber';
-import { InputText } from './components/InputText';
+import { Input } from './components/Input';
 import { Label } from './components/Label';
 import { MultipleErrorMessage } from './components/MultipleErrorMessage';
 import { Radio } from './components/Radio';
@@ -12,9 +12,9 @@ import { Textarea } from './components/Textarea';
 export {
   Checkbox,
   Field,
-  InputText,
-  Label,
+  Input,
   InputNumber,
+  Label,
   MultipleErrorMessage,
   Radio,
   Select,

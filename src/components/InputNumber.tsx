@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
-export const InputNumber = ({ name, id }: { name: string; id?: string }) => {
+export const InputNumber = ({ name, id, placeholder }: { name: string; id?: string; placeholder?: string }) => {
   const {
     register,
     formState: { errors },
@@ -16,7 +16,8 @@ export const InputNumber = ({ name, id }: { name: string; id?: string }) => {
         required: true,
       })}
       type="number"
-      className={classNames('input input-bordered w-full', {
+      placeholder={placeholder}
+      className={classNames('input input-bordered w-full ', {
         'input-error': errors[name],
       })}
     />

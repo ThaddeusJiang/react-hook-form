@@ -5,7 +5,7 @@ import { DevTool } from '@hookform/devtools';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-import { Checkbox, Field, InputNumber, InputText, MultipleErrorMessage, Radio, Select, Textarea } from '../src';
+import { Checkbox, Field, Input, InputNumber, MultipleErrorMessage, Radio, Select, Textarea } from '../src';
 import { FormProvider, useForm } from 'react-hook-form';
 
 export default {
@@ -33,9 +33,15 @@ export const Basic = () => {
         className=" form-control  container  max-w-screen-sm  flex flex-col space-y-4 bg-white rounded shadow p-4 "
         onSubmit={formMethods.handleSubmit(onSubmit)}
       >
-        <Field name="firstName" Component={InputText} />
-        <Field name="lastName" Component={InputText} />
-        <Field name="age" Component={InputNumber} />
+        <Field name="firstName">
+          <Input id="firstName" name="firstName" />
+        </Field>
+        <Field name="lastName">
+          <Input id="lastName" name="lastName" />
+        </Field>
+        <Field name="age">
+          <InputNumber id="age" name="age" />
+        </Field>
 
         <button type="submit" className="btn btn-primary">
           Save
@@ -73,9 +79,15 @@ export const InlineError = () => {
         className=" form-control  container  max-w-screen-sm  flex flex-col space-y-4 bg-white rounded shadow p-4 "
         onSubmit={formMethods.handleSubmit(onSubmit)}
       >
-        <Field name="firstName" Component={InputText} />
-        <Field name="lastName" Component={InputText} />
-        <Field name="age" Component={InputNumber} />
+        <Field name="firstName">
+          <Input id="firstName" name="firstName" />
+        </Field>
+        <Field name="lastName">
+          <Input id="lastName" name="lastName" />
+        </Field>
+        <Field name="age">
+          <InputNumber id="age" name="age" />
+        </Field>
 
         <button type="submit" className="btn btn-primary">
           Save
@@ -115,9 +127,15 @@ export const IsolatedErrors = () => {
       >
         <MultipleErrorMessage />
 
-        <Field name="firstName" Component={InputText} withoutError />
-        <Field name="lastName" Component={InputText} withoutError />
-        <Field name="age" Component={InputNumber} withoutError />
+        <Field name="firstName" withoutError>
+          <Input id="firstName" name="firstName" />
+        </Field>
+        <Field name="lastName" withoutError>
+          <Input id="lastName" name="lastName" />
+        </Field>
+        <Field name="age" withoutError>
+          <InputNumber id="age" name="age" />
+        </Field>
 
         <button type="submit" className="btn btn-primary">
           Save
@@ -167,13 +185,13 @@ export const ComplexForm = () => {
                 <label htmlFor="firstName" className="label text-sm">
                   First Name
                 </label>
-                <InputText id="firstName" name="firstName" />
+                <Input id="firstName" name="firstName" />
               </div>
               <div>
                 <label htmlFor="lastName" className="label text-sm">
                   Last Name
                 </label>
-                <InputText id="lastName" name="lastName" />
+                <Input id="lastName" name="lastName" />
               </div>
             </div>
 
@@ -191,7 +209,7 @@ export const ComplexForm = () => {
                 <label htmlFor="email" className="label text-sm">
                   Email address
                 </label>
-                <InputText id="email" name="email" />
+                <Input id="email" name="email" />
               </div>
             </div>
 
@@ -228,7 +246,7 @@ export const ComplexForm = () => {
                 <label htmlFor="streetAddress" className=" label text-sm">
                   Street address
                 </label>
-                <InputText id="streetAddress" name="streetAddress" />
+                <Input id="streetAddress" name="streetAddress" />
               </div>
             </div>
 
@@ -238,14 +256,14 @@ export const ComplexForm = () => {
                 <label htmlFor="city" className=" label text-sm">
                   City
                 </label>
-                <InputText id="city" name="city" />
+                <Input id="city" name="city" />
               </div>
               <div>
                 {/* State / Province */}
                 <label htmlFor="stateProvince" className=" label text-sm">
                   State / Province
                 </label>
-                <InputText id="stateProvince" name="stateProvince" />
+                <Input id="stateProvince" name="stateProvince" />
               </div>
 
               <div>
@@ -253,7 +271,7 @@ export const ComplexForm = () => {
                 <label htmlFor="postalCode" className=" label text-sm">
                   Zip / Postal code
                 </label>
-                <InputText id="postalCode" name="postalCode" />
+                <Input id="postalCode" name="postalCode" />
               </div>
             </div>
           </section>
@@ -270,16 +288,13 @@ export const ComplexForm = () => {
               <div className="space-y-2">
                 <h5 className="  font-medium">By Email</h5>
                 <div className="flex items-center space-x-2">
-                  <Checkbox id="Comments" name="byEmail" value="Comments" />
-                  <label htmlFor="Comments">Comments</label>
+                  <Checkbox id="Comments" name="byEmail" value="Comments" label="Comments" />
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Checkbox id="Candidates" name="byEmail" value="Candidates" />
-                  <label htmlFor="Candidates">Candidates</label>
+                  <Checkbox id="Candidates" name="byEmail" value="Candidates" label="Candidates" />
                 </div>
                 <div className="flex items-center space-x-2">
-                  <Checkbox id="Offers" name="byEmail" value="Offers" />
-                  <label htmlFor="Offers">Offers</label>
+                  <Checkbox id="Offers" name="byEmail" value="Offers" label="Offers" />
                 </div>
               </div>
             </div>
@@ -290,23 +305,25 @@ export const ComplexForm = () => {
                   <h5 className="font-medium">Push Notifications</h5>
                   <p className=" font-light">These are delivered via SMS to your mobile phone.</p>
                 </div>
-                <Radio
-                  name="pushNotifications"
-                  options={[
-                    {
-                      id: 'Everything',
-                      text: 'Everything',
-                    },
-                    {
-                      id: 'Same as email',
-                      text: 'Same as email',
-                    },
-                    {
-                      id: 'No push notifications',
-                      text: 'No push notifications',
-                    },
-                  ]}
-                />
+
+                {[
+                  {
+                    id: 'Everything',
+                    text: 'Everything',
+                  },
+                  {
+                    id: 'Same as email',
+                    text: 'Same as email',
+                  },
+                  {
+                    id: 'No push notifications',
+                    text: 'No push notifications',
+                  },
+                ].map((item) => (
+                  <div className="mb-2">
+                    <Radio name="Radio" key={item.id} id={item.id} value={item.id} label={item.text} />
+                  </div>
+                ))}
               </div>
             </div>
           </section>
@@ -319,6 +336,74 @@ export const ComplexForm = () => {
         </footer>
         <DevTool control={formMethods.control} />
       </form>
+    </FormProvider>
+  );
+};
+
+export const AllInputs = () => {
+  const formMethods = useForm();
+  return (
+    <FormProvider {...formMethods}>
+      <form
+        className="form-control max-w-screen-sm flex flex-col space-y-4"
+        onSubmit={formMethods.handleSubmit(onSubmit)}
+      >
+        <Field name="Input">
+          <Input id="Input" name="Input" placeholder="Input" />
+        </Field>
+        <Field name="InputNumber">
+          <InputNumber id="InputNumber" name="InputNumber" placeholder="1,000,000" />
+        </Field>
+
+        <Field name="InputPassword">
+          <Input id="InputPassword" name="InputPassword" type="password" placeholder="******" />
+        </Field>
+
+        <Field name="Date">
+          <Input id="InputTime" name="InputTime" type="date" />
+        </Field>
+
+        <Field name="Time">
+          <Input id="InputTime" name="InputTime" type="time" />
+        </Field>
+
+        <Field name="Select">
+          <Select
+            id="Select"
+            name="Select"
+            options={[
+              {
+                id: 'JP',
+                text: 'Japan',
+              },
+              {
+                id: 'US',
+                text: 'United States',
+              },
+            ]}
+          />
+        </Field>
+
+        <Field name="Checkbox">
+          <Checkbox id="Checkbox" name="Checkbox" label="checked" />
+        </Field>
+
+        <Field name="Radio">
+          {[
+            {
+              id: 'JP',
+              text: 'Japan',
+            },
+            {
+              id: 'US',
+              text: 'United States',
+            },
+          ].map((item) => (
+            <Radio name="Radio" key={item.id} id={item.id} value={item.id} label={item.text} />
+          ))}
+        </Field>
+      </form>
+      <DevTool control={formMethods.control} />
     </FormProvider>
   );
 };

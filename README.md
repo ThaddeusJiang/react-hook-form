@@ -14,7 +14,7 @@
 
 ## Features
 
-- [x] Basic Inputs, e.g. `Input`, `Select`, `Checkbox`, `Radio`, `Switch`
+- [x] Basic Inputs, e.g. `Input`, `InputNumber`, `Select`, `Checkbox`, `Radio`, `Switch`
 - [x] Support `react-hook-form` v7 and `daisyUI` v2
 - [x] Super easy to use
 
@@ -35,9 +35,15 @@ export const Profile = () => {
   return (
     <FormProvider {...formMethods}>
       <form onSubmit={formMethods.handleSubmit(onSubmit)}>
-        <Field name="firstName" Component={InputText} />
-        <Field name="lastName" Component={InputText} />
-        <Field name="age" Component={InputNumber} />
+        <Field name="firstName">
+          <Input id="firstName" name="firstName" />
+        </Field>
+        <Field name="lastName">
+          <Input id="lastName" name="lastName" />
+        </Field>
+        <Field name="age">
+          <InputNumber id="age" name="age" />
+        </Field>
 
         <button type="submit">Save</button>
       </form>
@@ -45,6 +51,8 @@ export const Profile = () => {
   );
 };
 ```
+
+![Show Case](./docs/form.png)
 
 More examples: [storybook](./stories/example.stories.tsx)
 

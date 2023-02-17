@@ -18,7 +18,7 @@ export const Select = ({
 
   return (
     <select
-      className={classNames(' select  select-bordered', {
+      className={classNames(' select  select-bordered w-full', {
         'select-error': errors[name],
       })}
       {...register(name)}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { Field, InputText } from '../src';
+import { Field, Input } from '../src';
 import { FormProvider, useForm } from 'react-hook-form';
 
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -31,7 +31,9 @@ function FormWrapper({ children }: { children: React.ReactNode }) {
 test('renders successfully', () => {
   render(
     <FormWrapper>
-      <Field name="test" label="test" Component={InputText} />
+      <Field name="test" label="test">
+        <Input name="test" />
+      </Field>
     </FormWrapper>
   );
   const label = screen.getByText(/test/i);

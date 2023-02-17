@@ -2,7 +2,17 @@ import classNames from 'classnames';
 import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
-export const InputText = ({ name, id }: { name: string; id?: string }) => {
+export const Input = ({
+  name,
+  id,
+  placeholder,
+  type,
+}: {
+  name: string;
+  id?: string;
+  placeholder?: string;
+  type?: string;
+}) => {
   const {
     register,
     formState: { errors },
@@ -10,11 +20,13 @@ export const InputText = ({ name, id }: { name: string; id?: string }) => {
 
   return (
     <input
-      className={classNames('input input-bordered  w-full', {
+      className={classNames('input input-bordered w-full', {
         'input-error': errors[name],
       })}
-      {...register(name)}
+      placeholder={placeholder}
       id={id ?? name}
+      type={type ?? 'text'}
+      {...register(name)}
     />
   );
 };

@@ -6,18 +6,14 @@ export const Field = (props: {
   name: string;
   id?: string;
   label?: string;
-  Component: React.ComponentType<{
-    name: string;
-    id?: string;
-    text?: string;
-  }>;
   withoutError?: boolean;
+  children: React.ReactNode;
 }) => {
-  const { name, id, label, Component, withoutError = false } = props;
+  const { name, id, label, withoutError = false, children } = props;
   return (
     <div>
       <Label name={name} id={id ?? name} label={label ?? name} />
-      <Component {...props} />
+      {children}
       {withoutError ? null : <SingleErrorMessage name={name} />}
     </div>
   );
