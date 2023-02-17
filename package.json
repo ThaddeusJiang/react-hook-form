@@ -1,7 +1,7 @@
 {
   "name": "@thaddeusjiang/react-hook-form",
   "author": "Thaddeus Jiang",
-  "version": "0.0.1",
+  "version": "0.0.2-rc.1",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
