@@ -14,7 +14,7 @@ env:
 
 jobs:
   test-frontend:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: 'Checkout GitHub Action'
         uses: actions/checkout@v2
